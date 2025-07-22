@@ -1,0 +1,43 @@
+.movie-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+}
+
+.movie-card-detail {
+  background-color: #f8f9fa;
+  padding: 2rem;
+  max-width: 1000px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.movie-card-detail h2 {
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.movie-card-detail p {
+  line-height: 1.6;
+  margin: 0.5rem 0;
+  color: #444;
+  font-size: 1.2rem;
+}
+
+.back-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #0077cc;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #005fa3;
+}

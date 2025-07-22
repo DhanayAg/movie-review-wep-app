@@ -1,0 +1,73 @@
+.intro, .genres, .add-review-link {
+  margin: 20px auto;
+  max-width: 1200px;
+  padding: 10px 20px;
+}
+
+.intro h2 {
+  font-size: 2rem;
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+
+.intro p{
+  font-size: 1.2rem;
+  padding-bottom: 30px;
+}
+
+
+.add-btn {
+  display: inline-block;
+  background-color: #1abc9c;
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.add-review-link a{
+  color: #ffffff;
+}
+
+.genre_link:hover {
+  background-color: #d0e6fa; /* Light blue hover color */
+  transform: scale(1.01);
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background-color: #16a085;
+}
+
+.genres h2{
+  padding-bottom: 20px;
+}
+
+.genres ul {
+  list-style: none;
+  padding: 0;
+}
+
+.genres li {
+  background-color: #ecf0f1;
+  padding: 10px;
+  margin: 6px 0;
+  border-radius: 5px;
+  
+}
+
+.genre_link a:link,
+.genre_link a:visited {
+  color: #007BFF; /* Or whatever color you use normally, e.g., blue */
+  text-decoration: none;
+}
+
+.genre_link a:hover {
+  color: #0056b3; /* A slightly darker shade for hover effect */
+  text-decoration: underline;
+}
+
+.genre_link a:active {
+  color: #004080;
+}

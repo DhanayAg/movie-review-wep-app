@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= genre %> Movies</title>
+  <link href="/styles/genre.css" rel="stylesheet"/>
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <h2>🎬 Movies in "<%= genre %>" Genre</h2>
+
+  <% if (movies.length === 0) { %>
+    <p>No movies found for this genre yet.</p>
+  <% } else { %>
+
+    <form class="genre_form" method="get">
+      <label>Sort by:</label>
+      <select name="sort" onchange="this.form.submit()">
+        <option value="title" <%= selectedSort === 'title' ? 'selected' : '' %>>Title</option>
+        <option value="year" <%= selectedSort === 'year' ? 'selected' : '' %>>Year</option>
+        <option value="rating" <%= selectedSort === 'rating' ? 'selected' : '' %>>Rating</option>
+      </select>
+    </form>
+
+    <div class = "mine" >
+        <% movies.forEach(movie => { %>
+        <div class="movie-card">
+            <h3><%= movie.title %> (<%= movie.year %>)</h3>
+            <p><strong>Rating:</strong> <%= movie.rating %>/10</p>
+            <p><%= movie.basic_description %></p>
+
+            <a href="/movie/<%= movie.id %>" class="read-more-btn">Read More</a>
+
+            <div class="movie-actions">
+                <a href="/edit/<%= movie.id %>" class="edit-btn">✏️ Edit</a>
+                <form action="/delete/<%= movie.id %>" method="POST" style="display:inline">
+                    <input type="hidden" name="genreId" value="<%= movie.genre_id %>">
+                    <button type="submit" class="delete-btn" onclick="return confirm('Are you sure you want to delete this movie?');">Delete</button>
+                </form>
+            </div>
+        </div>
+    <% }); %>
+    </div>
+  <% } %>
+
+  <%- include('partials/footer') %>
+</body>
+</html>

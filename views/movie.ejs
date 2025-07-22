@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/styles/movie.css" rel="stylesheet" />
+</head>
+<body>
+    <%- include('partials/header') %>
+
+    <div class="movie-container">
+        <div class="movie-card-detail">
+            <h2><%= movie.title %> (<%= movie.year %>)</h2>
+            <p><strong>Director:</strong> <%= movie.director %></p>
+            <p><strong>Rating:</strong> <%= movie.rating %>/10</p>
+            <p><strong>Full Summary:</strong></p>
+            <p><%= movie.summary %></p>
+
+            <a href="javascript:history.back()" class="back-btn">⬅ Back to Genre</a>
+        </div>
+    </div>
+
+    <%- include('partials/footer') %>
+    
+</body>
+</html>

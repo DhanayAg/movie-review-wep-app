@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Movie Review Hub</title>
+  <link rel="stylesheet" href="/styles/home.css" />
+</head>
+<body>
+    <%- include('partials/header') %>
+
+    <main>
+    <section class="intro">
+        <h2>Welcome to Movie Review Hub</h2>
+        <p>
+        Hi, I'm <strong>Dhanay Agarwal</strong>. This website is dedicated to reviewing and exploring movies from various genres. 
+        Whether you're a cinephile or a casual viewer, dive into our collection of reviews or add your own!
+        </p>
+        <p>
+        I'm constantly exploring new films and revisiting old favorites. Whenever I come across a movie that leaves an impression — good or bad — I make sure to share my thoughts here.
+        </p>
+        <p>
+        This website is a growing collection of my personal movie experiences. I'll keep updating it as I discover more stories, characters, and moments that stay with me.
+        </p>
+        <p>
+        Whether it's a cult classic, a recent blockbuster, or a hidden gem — if I’ve watched it and have something to say, you’ll find it here.
+        </p>
+
+    </section>
+
+    <section class="genres">
+        <h2>🎭 Browse by Genre</h2>
+        <ul>
+        <% genres.forEach(function(genre) { %>
+            <li class="genre_link">
+                <a href="/genre/<%= genre.genre.toLowerCase().replace(/\s+/g, '-') %>">
+                    <%= genre.genre %>
+                </a>
+            </li>
+        <% }); %>
+        </ul>
+    </section>
+
+    <section class="add-review-link">
+        <a class="add-btn" href="/movies/add">➕    Add a Movie Review</a>
+    </section>
+    </main>
+
+
+    <%- include('partials/footer') %>
+
+</body>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add Movie Review</title>
+  <link rel="stylesheet" href="/styles/add.css" />
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <div class="form-container">
+    <h2>🎬 Add a Movie Review</h2>
+    <form action="/movies/add" method="POST">
+      <div class="form-group">
+        <label for="title">Movie Title:</label>
+        <input type="text" id="title" name="title" required />
+      </div>
+
+      <div class="form-group">
+        <label for="year">Release Year:</label>
+        <input type="number" id="year" name="year" required />
+      </div>
+
+      <div class="form-group">
+        <label for="director">Director:</label>
+        <input type="text" id="director" name="director" required />
+      </div>
+
+      <div class="form-group">
+        <label for="rating">Rating (out of 10):</label>
+        <input type="number" step="0.1" max="10" id="rating" name="rating" required />
+      </div>
+
+      <div class="form-group">
+        <label for="basic_description">Basic Description:</label>
+        <textarea id="basic_description" name="basic_description" rows="2" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="summary">Full Summary:</label>
+        <textarea id="summary" name="summary" rows="4" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="genre_id">Select Genre:</label>
+        <select id="genre_id" name="genre_id" required>
+          <% genres.forEach(genre => { %>
+            <option value="<%= genre.id %>"><%= genre.genre %></option>
+          <% }) %>
+        </select>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit Review</button>
+    </form>
+  </div>
+
+  <%- include('partials/footer') %>
+</body>
+</html>
